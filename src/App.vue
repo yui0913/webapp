@@ -3,13 +3,17 @@
           <a href="../views/Index.vue" v-on:click="store" 
           ><div class="sosin"><img src="./img/sosin.png"></div></a>
       <div class="in">
+        <span class="userid">
       <p style="display:inline">ユーザー名</p>
-      <input type="text" v-model="userid">
+      <input type="text" v-model="userid" size="15">
+      </span>
       </div>
       <div class="in">
+        <span class="taion">
       <p style="display:inline">体温</p>
       <input type="tel" v-model="bodytem" placeholder="36.0" 
-      required maxlength="4" size="10">
+      required maxlength="4" size="1">℃
+        </span>
       </div>
       <div class="in">
       <p>こころ</p>
@@ -33,46 +37,62 @@
       </div>
       <div class="in">
         <div class="detail">
-       <label><input type="radio" id="cold" name="sick" value="cold" v-model="down"><img src="./img/kaze_g.png" class="radio_image"></label>
-       <label><input type="radio" id="menstrual" name="sick" value="menstrual" v-model="down"><img src="./img/seri_g.png" class="radio_image"></label>
-       <label><input type="radio" id="sleep" name="sick" value="sleep" v-model="down"><img src="./img/nebusoku_g.png" class="radio_image"></label>
-       <label><input type="radio" id="climate" name="sick" value="climate" v-model="down"><img src="./img/kikou_g.png" class="radio_image"></label>
-      <label><input type="radio" id="other" name="sick" value="other" v-model="down"><img src="./img/sonota_g.png" class="radio_image"></label>
+       <label><input type="radio" id="cold" name="sick" value="cold" v-model="down"><img src="./img/kaze_g.png" class="radio_image02"></label>
+       <label><input type="radio" id="menstrual" name="sick" value="menstrual" v-model="down"><img src="./img/seri_g.png" class="radio_image02"></label>
+       <label><input type="radio" id="sleep" name="sick" value="sleep" v-model="down"><img src="./img/nebusoku_g.png" class="radio_image02"></label>
+       <label><input type="radio" id="climate" name="sick" value="climate" v-model="down"><img src="./img/kikou_g.png" class="radio_image02"></label>
+      <label><input type="radio" id="other" name="sick" value="other" v-model="down"><img src="./img/sonota_g.png" class="radio_image02"></label>
         </div>
       </div>
       <p>{{ message }}</p>
+<div class="in">
       <p>備考</p>
+      <span class="bikou">
       <textarea v-model="message" placeholder="備考"></textarea>
+      </span>
+</div>
 </div>
 </template>
 <style>
+.in .userid input{
+  background: #F4E0C7;
+  border: none;
+  margin-left: 80px;
+}
+.in .taion input{
+  border: none;
+  font-size: 30px;
+  margin-left: 140px;
+}
+.in .taion input::placeholder{
+  color: #CECFCE;
+  text-align: right;
+}
   .radio_image{
-    width:45px;
+    width:50px;
+    margin-right: 5px;
+  }
+  .radio_image02{
+    width:53px;
+    margin-right: 5px;
+  }
+  .heartcon,.detail{
+      text-align: center;
   }
 #m_excellent,#m_good,#m_nomal,#m_bad,#m_worst,#h_excellent,#h_good,#h_nomal,#h_bad,#h_worst,#cold,#menstrual,#sleep,#climate,#other {
-	display: none;
+  display: none;
 }
-#m_excellent:checked + .radio_image,
-#m_good:checked + .radio_image,
-#m_nomal:checked + .radio_image,
-#m_bad:checked + .radio_image,
-#m_worst:checked + .radio_image,
-#h_excellent:checked + .radio_image,
-#h_good:checked + .radio_image,
-#h_nomal:checked + .radio_image,
-#h_bad:checked + .radio_image,
-#h_worst:checked + .radio_image,
-#cold:checked + .radio_image,
-#menstrual:checked + .radio_image,
-#sleep:checked + .radio_image,
-#climate:checked + .radio_image,
-#other:checked + .radio_image
+#m_excellent:checked + .radio_image,#m_good:checked + .radio_image,#m_nomal:checked + .radio_image,
+#m_bad:checked + .radio_image,#m_worst:checked + .radio_image,#h_excellent:checked + .radio_image,#h_good:checked + .radio_image,
+#h_nomal:checked + .radio_image,#h_bad:checked + .radio_image,#h_worst:checked + .radio_image,
+#cold:checked + .radio_image02,#menstrual:checked + .radio_image02,#sleep:checked + .radio_image02,#climate:checked + .radio_image02,#other:checked + .radio_image02
  {
-	border: 3px #ff0000 solid;
+  border: 5px #F9AE53 solid;
   border-radius:100px;
 }
 .sosin{
   text-align:right;
+  margin-bottom: 30px;
 }
 .in{
 margin-left:20px;
@@ -84,6 +104,11 @@ margin-right:20px;
 }
 .sick img{
   height: 20px;
+}
+textarea {
+  resize: none;
+  width:100%;
+  height:100px;
 }
 </style>
           <!-- The core Firebase JS SDK is always required and must be listed first -->

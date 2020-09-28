@@ -1,34 +1,23 @@
 <script>
 import { Bar } from 'vue-chartjs';
-
 export default {
   extends: Bar,
   name: 'chart',
   data () {
     return {
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: ['~35.9', '36.0~36.9', '37.0~37.9', '38.0~38.9', '39.0'],
         datasets: [
           {
-            label: 'Bar Dataset',
-            data: [10, 20, 30, 40, 50, 30],
+            label: '人数',
+            data: [3, 20, 0, 0, 0],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              '#F9AE53',
+              '#F9AE53',
+              '#F9AE53',
+              '#F9AE53',
+              '#F9AE53'
             ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
           }
         ]
       },
@@ -37,13 +26,15 @@ export default {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Month'
             }
           }],
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 10,
+              stepSize: 5,
+              callback: function (label, index, labels) {
+                  return label + '人'; // ラベルに'点'を付ける
+                }
             }
           }]
         }
