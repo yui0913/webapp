@@ -6,17 +6,15 @@ export default {
   data () {
     return {
       data: {
-        labels: ['~35.9', '36.0~36.9', '37.0~37.9', '38.0~38.9', '39.0'],
+        labels: [ '~36.9', '37.0~37.4', '37.5~'],
         datasets: [
           {
             label: '人数',
-            data: [3, 20, 0, 0, 0],
+            data: [3, 10, 5],
             backgroundColor: [
-              '#F9AE53',
-              '#F9AE53',
-              '#F9AE53',
-              '#F9AE53',
-              '#F9AE53'
+              '#9AEA65',
+              '#F9E353',
+              '#F15D5D'
             ],
           }
         ]
