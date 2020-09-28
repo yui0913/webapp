@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class=graph>
     <span id="view_time"></span>
     <chart></chart>
-    <router-link to="/form">体温入力</router-link>
+    <div class="btn"><router-link to="/form">体温入力</router-link></div>
   </div>
 </template>
 
@@ -16,3 +16,8 @@ export default {
 }
 </script>
 
+<style>
+.graph{
+  margin: 50px 0 0 0;
+}
+</style>

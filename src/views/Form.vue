@@ -15,7 +15,7 @@
     　</span>
     </div>
       <div class="in">
-      <p>こころ</p>
+      <p>ココロ</p>
       <div class="heartcon">
       <label><input type="radio" id="m_excellent" name="mind" value="m_excellent" v-model="sin"><img src="../img/face_5.2.png" class="radio_image" ></label>
       <label><input type="radio" id="m_good" name="mind" value="m_good" v-model="sin"><img src="../img/face_4.2.png" class="radio_image"></label>
@@ -25,7 +25,7 @@
       </div>
       </div>
       <div class="in">
-      <p>からだ</p>
+      <p>カラダ</p>
       <div class="heartcon">
       <label><input type="radio" id="h_excellent" name="health" value="h_excellent" v-model="tai"><img src="../img/face_5.2.png" class="radio_image"></label>
       <label><input type="radio" id="h_good" name="health" value="h_good" v-model="tai"><img src="../img/face_4.2.png" class="radio_image"></label>
@@ -35,6 +35,7 @@
           </div>
       </div>
       <div class="in">
+      <p>諸症状</p>
         <div class="detail">
         <label><input type="radio" id="cold" name="sick" value="cold" v-model="down"><img src="../img/kaze_g.png" class="radio_image02"></label>
         <label><input type="radio" id="menstrual" name="sick" value="menstrual" v-model="down"><img src="../img/seri_g.png" class="radio_image02"></label>
@@ -43,20 +44,23 @@
         <label><input type="radio" id="other" name="sick" value="other" v-model="down"><img src="../img/sonota_g.png" class="radio_image02"></label>
         </div>
       </div>
-    <p>{{ message }}</p>
     <div class="in">
         <p>備考</p>
         <span class="bikou">
-        <textarea v-model="message" placeholder="備考"></textarea>
+        <textarea v-model="message" placeholder="例：倦怠感や頭痛があります。"></textarea>
         </span>
     </div>
 </div>
 </template>
 <style>
+.in{
+  margin:30px 0;
+}
 .in .userid input{
   background: #F4E0C7;
   border: none;
   margin-left: 80px;
+  padding: 5px;
 }
 .in .taion input{
   border: none;
@@ -86,7 +90,7 @@
 #h_nomal:checked + .radio_image,#h_bad:checked + .radio_image,#h_worst:checked + .radio_image,
 #cold:checked + .radio_image02,#menstrual:checked + .radio_image02,#sleep:checked + .radio_image02,#climate:checked + .radio_image02,#other:checked + .radio_image02
  {
-  border: 5px #F9AE53 solid;
+  border: 3px #F9AE53 solid;
   border-radius:100px;
 }
 .sosin{
